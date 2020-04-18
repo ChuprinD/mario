@@ -1,4 +1,4 @@
-#define _TX_ALLOC_BREAK 383
+//#define _TX_ALLOC_BREAK 383
 #include "../include/SFML.hpp"
 
 void UtilsMain();

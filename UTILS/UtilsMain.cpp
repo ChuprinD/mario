@@ -23,7 +23,7 @@ int main ()
     if(!sprite)
         txMessageBox ("I can't load mario1.bmp");
 
-    for (int y = 0; y < 2; y++)//14; y++)
+    for (int y = 0; y < 5; y++)
         {    
         for (int x = 0; x < 16; x++)
             {

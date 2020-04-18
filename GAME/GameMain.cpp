@@ -33,22 +33,30 @@ int main()
 
     enum ground_types_animation {g_set_ground, g_set_grass};
 
-    std::vector <Animation> marios_animations = {{&marios, {0       , 256 * 10}, {256, 256}, {0,    0}, 12},
-                                                 {&marios, {0       , 256 * 12}, {256, 256}, {0,    0}, 12},
-                                                 { &stars, {0       ,        0}, {35 ,  35}, {0, -100},  6},
-                                                 {&marios, {0       , 256 *  0}, {256, 256}, {0,    0}, 16},
-                                                 {&marios, {0       , 256 *  4}, {256, 256}, {0,    0}, 16},
-                                                 {&marios, {0       , 256 *  5}, {256, 256}, {0,    0}, 16},
-                                                 {&marios, {11 * 256, 256 *  2}, {256, 256}, {0,    0},  4}};
+    /*std::vector <Animation> marios_animations = {{&marios, { 0, 10}, {256, 256}, {0,    0}, 12},
+                                                 {&marios, { 0, 12}, {256, 256}, {0,    0}, 12},
+                                                 { &stars, { 0,  0}, {35 ,  35}, {0, -100},  6},
+                                                 {&marios, { 0,  0}, {256, 256}, {0,    0}, 16},
+                                                 {&marios, { 0,  4}, {256, 256}, {0,    0}, 16},
+                                                 {&marios, { 0,  5}, {256, 256}, {0,    0}, 16},
+                                                 {&marios, {11,  2}, {256, 256}, {0,    0},  4}};  */
+
+    std::vector <Animation> marios_animations = {{&marios, { 0, 4}, {256, 256}, {0,    0}, 12},
+                                                 {&marios, { 0, 4}, {256, 256}, {0,    0}, 12},
+                                                 { &stars, { 0, 4}, {35 ,  35}, {0, -100},  6},
+                                                 {&marios, { 0, 4}, {256, 256}, {0,    0}, 16},
+                                                 {&marios, { 0, 4}, {256, 256}, {0,    0}, 16},
+                                                 {&marios, { 0, 4}, {256, 256}, {0,    0}, 16},
+                                                 {&marios, { 0, 4}, {256, 256}, {0,    0},  4} };
 
     std::vector <Animation> frogs_animations = {{&frogs, {0, 0}, {100, 100}, {0,   0},  4, 3},
                                                 {&stars, {0, 0}, { 35,  35}, {0, -50},  6, 3}};
 
     std::vector <Animation> grounds_animations = {{&grounds, {0,  0}, {Size_grid, Size_grid}, {0, 0}, 1}, {&grounds, {Size_grid, 0}, {Size_grid, Size_grid}, {0, 0}, 1}, {&grounds, {192, 0}, {Size_grid, Size_grid}, {0, 0}, 1}};
 
-    GameObject mario  (sf::Vector2i {600, 10}, &marios_animations, mario_types_animation::m_stay);
-    GameObject frog   (sf::Vector2i {800, 551},  &frogs_animations, frog_types_animation::f_jump);
-    GameObject ground (sf::Vector2i {0, 0},  &grounds_animations, ground_types_animation::g_set_ground);
+    GameObject mario  (sf::Vector2i {600, 10}, &marios_animations, mario_types_animation::m_stay, ReadConfig());
+    GameObject frog   (sf::Vector2i {800, 551},  &frogs_animations, frog_types_animation::f_jump, ReadConfig());
+    GameObject ground (sf::Vector2i {0, 0},  &grounds_animations, ground_types_animation::g_set_ground, ReadConfig());
 
    // mario.setOrigin (sf::Vector2f {256 / 2, 256 / 2});
    // frog.setOrigin (sf::Vector2f {100 / 2, 100 / 2});
@@ -112,7 +120,7 @@ int main()
                 ground.pos_ = sf::Vector2i {i%10 * Size_grid, i/10 * Size_grid};
                 ground.curAnimation_ = Background -> at(i);
                 ground.draw();
-                ground.control();
+                //ground.control();
                 }
             }
             
@@ -120,7 +128,7 @@ int main()
         mario.physics();
         mario.control();
         frog.draw (); 
-        frog.control();   
+        //frog.control();   
         
         Window -> display();
         } 

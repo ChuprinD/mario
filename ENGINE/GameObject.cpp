@@ -13,7 +13,7 @@ void GameObject::control()
         
     sf::Vector2f origin_pos = {animations_[curAnimation_].sprite_.getOrigin().x + pos_.x, animations_[curAnimation_].sprite_.getOrigin().y + pos_.y};
     draw_origin (origin_pos, 5);
-    draw_rect (pos_, animations_[curAnimation_].size_);
+    draw_rect (config_, animations_[curAnimation_].pos_, animations_[curAnimation_].nFrames_, animations_[curAnimation_].frame_, pos_);
     //draw_rect (sf::Vector2i(0, 0), sf::Vector2i(100, 100));
 
     const sf::IntRect object = rectFrom(animations_[curAnimation_].pos_, animations_[curAnimation_].size_);
@@ -24,7 +24,7 @@ void GameObject::control()
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && intersection(object, bottom))
         {
-        curAnimation_ = 0;
+        curAnimation_ = 4;//!!!0
         pos_.y -= 144;
         }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && intersection(object, left))
@@ -100,14 +100,16 @@ sf::IntRect rectFrom (sf::Vector2i pos, sf::Vector2i size)
 
 //========================================================================================================
 
-void draw_rect(sf::Vector2i pos, sf::Vector2i size)
+void draw_rect(Config config, sf::Vector2i posAnimation, int nFrames, int frame, sf::Vector2i pos)
     {
+    $_(frame); $(posAnimation.y);
+    sf::IntRect cur = config.hitboxes[frame + posAnimation.x + posAnimation.y * nFrames];
     sf::RectangleShape recTile;
-    recTile.setSize(sf::Vector2f{float (size.x), float (size.y)});
+    recTile.setSize(sf::Vector2f{float (cur.width), float (cur.height)});
     recTile.setFillColor(sf::Color::Color(0, 0, 0, 0));
     recTile.setOutlineThickness(1);
     recTile.setOutlineColor(sf::Color::Red);
-    recTile.setPosition(sf::Vector2f{float (pos.x), float(pos.y)});
+    recTile.setPosition(sf::Vector2f{float (cur.left + pos.x), float(cur.top + pos.y)});
     Window -> draw(recTile);
     }
 

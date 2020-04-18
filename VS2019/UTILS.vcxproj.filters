@@ -24,9 +24,6 @@
     <ClCompile Include="..\UTILS\UtilsMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\UTILS\CheckConfig.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\config.hpp">
@@ -40,9 +37,6 @@
     </ClInclude>
     <ClInclude Include="..\UTILS\UtilsMain.hpp">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTILS\CheckConfig.hpp">
-      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

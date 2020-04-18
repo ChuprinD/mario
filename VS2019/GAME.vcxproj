@@ -203,6 +203,7 @@
     <ClInclude Include="..\ENGINE\Engine.hpp" />
     <ClInclude Include="..\ENGINE\GameObject.hpp" />
     <ClInclude Include="..\GAME\GameMain.hpp" />
+    <ClInclude Include="..\GAME\ReadConfig.hpp" />
     <ClInclude Include="..\include\config.hpp" />
     <ClInclude Include="..\include\SFML.hpp" />
   </ItemGroup>
@@ -211,6 +212,7 @@
     <ClCompile Include="..\ENGINE\Engine.cpp" />
     <ClCompile Include="..\ENGINE\GameObject.cpp" />
     <ClCompile Include="..\GAME\GameMain.cpp" />
+    <ClCompile Include="..\GAME\ReadConfig.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

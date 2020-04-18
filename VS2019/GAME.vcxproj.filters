@@ -36,6 +36,9 @@
     <ClInclude Include="..\ENGINE\Animation.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\GAME\ReadConfig.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ENGINE\Animation.cpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\GAME\GameMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GAME\ReadConfig.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

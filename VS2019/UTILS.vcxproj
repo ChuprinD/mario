@@ -194,14 +194,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ENGINE\Engine.cpp" />
-    <ClCompile Include="..\UTILS\CheckConfig.cpp" />
     <ClCompile Include="..\UTILS\UtilsMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ENGINE\Engine.hpp" />
     <ClInclude Include="..\include\config.hpp" />
     <ClInclude Include="..\include\SFML.hpp" />
-    <ClInclude Include="..\UTILS\CheckConfig.hpp" />
     <ClInclude Include="..\UTILS\UtilsMain.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
