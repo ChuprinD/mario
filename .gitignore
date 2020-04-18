@@ -1,0 +1,8 @@
+VS2019/.vs/*
+VS2019/x64/*
+CB2003/obj/*
+*.dll
+*.user
+*.bmarks
+*.html
+*.save
